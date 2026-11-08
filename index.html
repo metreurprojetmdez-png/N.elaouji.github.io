@@ -1,0 +1,876 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Métreur vérificateur · Nasr-eddine Elaouji</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Nasr-eddine Elaouji, métreur vérificateur : 13 ans en travaux routiers et génie civil au Maroc et en Afrique de l’Ouest. Métrés, attachements, décomptes provisoires, situations financières.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Mise en page : bureau d'études aéré. Hero sur fond de plan crayonné, trois grandes tuiles, engagements centrés, bandeaux pleine largeur. Titres condensés en capitales, accent orange. */
+:root{
+  --paper:#f6f6f4; --sheet:#ffffff; --ink:#1b2126; --ink-2:#5a6268; --rule:#d9dcde; --rule-2:#eceeef;
+  --accent:#d9661c; --accent-2:#f08a3e; --on-accent:#ffffff;
+  --pencil:#9aa1a6;
+  --ok:#2e7d4f; --warn:#b86a00; --bad:#b3261e; --ok-bg:#e3f2e8; --warn-bg:#fdf0d9; --bad-bg:#fbe4e2;
+  --c-ma:#1f5b84; --c-ci:#7a4fa0; --c-sn:#2e7d4f;
+  --dark:#1b2126; --dark-2:#232b31; --dark-line:#343e46; --dark-fg:#eef1f3; --dark-mute:#a7b0b7;
+  --f-display:"Teko","Arial Narrow",Arial,sans-serif;
+  --f-body:"Barlow","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --f-data:"JetBrains Mono",Consolas,"Courier New",monospace;
+  --wrap:74rem;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#111518; --sheet:#181e22; --ink:#eef1f3; --ink-2:#a7b0b7; --rule:#2c353c; --rule-2:#20272c;
+  --accent:#f08a3e; --accent-2:#f6a868; --on-accent:#1b1006; --pencil:#4d575e;
+  --ok:#6cc28f; --warn:#f0b05a; --bad:#f08a80; --ok-bg:#16342a; --warn-bg:#3a2c12; --bad-bg:#3d1c1a;
+  --c-ma:#7cb8e0; --c-ci:#b99ae0; --c-sn:#6cc28f;
+  --dark:#0b0e10; --dark-2:#14191c; --dark-line:#2a3238; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#111518; --sheet:#181e22; --ink:#eef1f3; --ink-2:#a7b0b7; --rule:#2c353c; --rule-2:#20272c;
+  --accent:#f08a3e; --accent-2:#f6a868; --on-accent:#1b1006; --pencil:#4d575e;
+  --ok:#6cc28f; --warn:#f0b05a; --bad:#f08a80; --ok-bg:#16342a; --warn-bg:#3a2c12; --bad-bg:#3d1c1a;
+  --c-ma:#7cb8e0; --c-ci:#b99ae0; --c-sn:#6cc28f;
+  --dark:#0b0e10; --dark-2:#14191c; --dark-line:#2a3238; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--sheet);color:var(--ink);font-family:var(--f-body);font-size:1.0625rem;line-height:1.65}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--sheet)}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+h1,h2,h3{font-family:var(--f-display);font-weight:500;line-height:.95;text-transform:uppercase;letter-spacing:.02em;text-wrap:balance;margin:0}
+p{margin:0}
+button{font:inherit}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.kicker{font-family:var(--f-display);font-size:1.15rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);line-height:1}
+.label{font-family:var(--f-data);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+
+/* ---------- en-tête ---------- */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:color-mix(in srgb,var(--sheet) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+.top .wrap{display:flex;align-items:center;gap:1rem;min-height:4rem}
+.brand{display:grid;line-height:1;text-decoration:none;color:var(--ink);white-space:nowrap}
+.brand b{font-family:var(--f-display);font-weight:600;font-size:1.75rem;letter-spacing:.04em;text-transform:uppercase}
+.brand b span{color:var(--accent)}
+.brand small{font-family:var(--f-data);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);margin-top:.1rem}
+.nav{display:flex;gap:.1rem;margin-left:auto}
+.nav a{font-family:var(--f-display);font-size:1.25rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);text-decoration:none;padding:.35rem .65rem .15rem;position:relative;line-height:1.2}
+.nav a::after{content:"";position:absolute;left:.65rem;right:.65rem;bottom:0;height:2px;background:var(--accent);transform:scaleX(0);transition:transform .2s}
+.nav a:hover::after,.nav a[aria-current="true"]::after{transform:scaleX(1)}
+.nav a[aria-current="true"]{color:var(--accent)}
+.icon-btn{flex:none;display:grid;place-items:center;width:2.5rem;height:2.5rem;border-radius:50%;border:1px solid var(--rule);background:transparent;color:var(--ink);cursor:pointer}
+.icon-btn:hover{border-color:var(--accent);color:var(--accent)}
+.icon-btn svg{width:1.15rem;height:1.15rem}
+.burger{display:none;border:0;color:var(--accent)}
+.burger svg{width:1.7rem;height:1.7rem}
+.progress{height:2px;position:absolute;left:0;right:0;bottom:-1px}
+.progress i{display:block;height:100%;width:0;background:var(--accent)}
+@media (max-width:960px){
+  .burger{display:grid;order:-1;margin-left:-.4rem}
+  .theme-btn{margin-left:auto}
+  .nav{position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--sheet);border-bottom:1px solid var(--rule);
+       padding:.5rem max(16px,env(safe-area-inset-right,0px)) 1rem max(16px,env(safe-area-inset-left,0px));box-shadow:0 12px 24px rgba(0,0,0,.08)}
+  .nav:not(.open){display:none}
+  .nav a{font-size:1.6rem;padding:.55rem 0 .3rem;border-bottom:1px solid var(--rule-2)}
+  .nav a::after{left:0;right:auto;width:2.5rem}
+}
+
+/* ---------- boutons ---------- */
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--f-display);font-weight:500;font-size:1.3rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;padding:.6rem 1.5rem .4rem;border-radius:999px;border:2px solid var(--ink);color:var(--ink);background:transparent;cursor:pointer;transition:transform .15s,background .15s,color .15s;line-height:1.1}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn:hover{transform:translateY(-2px)}
+.btn.light{border-color:#fff;color:#fff}
+.btn-sm{font-size:.9rem;font-weight:600;padding:.35rem .9rem;border-radius:999px;border:1px solid var(--rule);background:var(--sheet);color:var(--ink);cursor:pointer}
+.btn-sm:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;background:var(--paper);border-bottom:1px solid var(--rule);
+  background-image:linear-gradient(var(--rule-2) 1px,transparent 1px),linear-gradient(90deg,var(--rule-2) 1px,transparent 1px);background-size:32px 32px}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+@media (max-width:820px){.hero canvas{opacity:.4}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--paper) 0%,color-mix(in srgb,var(--paper) 85%,transparent) 45%,transparent 80%);pointer-events:none}
+.hero .wrap{position:relative;z-index:1;padding-block:clamp(3.5rem,9vw,7rem) clamp(3rem,7vw,5.5rem)}
+.hero h1{font-size:clamp(3.2rem,8.5vw,6.6rem);font-weight:500;margin-block:.9rem 1.2rem;max-width:11ch}
+.hero h1 span{color:var(--accent)}
+.lede{font-size:1.25rem;color:var(--ink-2);max-width:34rem;line-height:1.5}
+.lede strong{color:var(--ink)}
+.ctas{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.status{display:inline-flex;align-items:center;gap:.55rem;margin-top:2rem;font-size:.95rem;font-weight:500;background:var(--sheet);border:1px solid var(--rule);border-radius:999px;padding:.35rem .9rem}
+.dot{width:.55rem;height:.55rem;border-radius:50%;background:var(--ok);box-shadow:0 0 0 3px var(--ok-bg)}
+
+/* ---------- tuiles ---------- */
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:820px){.tiles{grid-template-columns:1fr}}
+.tile{position:relative;display:grid;align-content:end;justify-items:center;gap:.9rem;min-height:clamp(16rem,30vw,22rem);padding:2rem 1.25rem;overflow:hidden;color:#fff;text-decoration:none;text-align:center;background:#20272c;border:0;cursor:pointer}
+.tile svg.art{position:absolute;inset:0;width:100%;height:100%;transition:transform .6s ease}
+.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,18,20,.05) 20%,rgba(15,18,20,.78) 100%)}
+.tile:hover svg.art,.tile:focus-visible svg.art{transform:scale(1.06)}
+.tile > *:not(svg){position:relative;z-index:1}
+.tile h2{font-size:clamp(2rem,3.4vw,2.6rem);font-weight:500;letter-spacing:.05em;color:#fff}
+.tile .pill-more{font-family:var(--f-display);font-size:1rem;letter-spacing:.12em;text-transform:uppercase;background:#fff;color:#1b2126;border-radius:999px;padding:.35rem 1.1rem .15rem;transition:background .2s,color .2s}
+.tile:hover .pill-more{background:var(--accent);color:#fff}
+.tile.t1{background:#2a3238} .tile.t2{background:#24302c} .tile.t3{background:#2f2a26}
+
+/* ---------- sections ---------- */
+section{padding-block:clamp(3.5rem,8vw,6rem)}
+.sec-head{display:grid;gap:.75rem;margin-bottom:2.5rem;max-width:46rem}
+.sec-head.center{margin-inline:auto;text-align:center;justify-items:center}
+.sec-head h2{font-size:clamp(2.4rem,5vw,3.6rem)}
+.sec-head p{color:var(--ink-2)}
+.sec-head.center::after{content:"";width:3rem;height:3px;background:var(--accent);margin-top:.25rem}
+.alt{background:var(--paper);border-block:1px solid var(--rule)}
+
+/* engagements */
+.values{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2.5rem;text-align:center}
+@media (max-width:820px){.values{grid-template-columns:1fr;gap:2rem}}
+.value{display:grid;justify-items:center;gap:.8rem;align-content:start}
+.value .ic{width:4.5rem;height:4.5rem;border-radius:50%;display:grid;place-items:center;border:1px solid var(--rule);color:var(--accent);background:var(--paper)}
+.value .ic svg{width:2rem;height:2rem}
+.value h3{font-size:1.9rem}
+.value p{color:var(--ink-2);max-width:20rem}
+
+/* profil */
+.about{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(2rem,5vw,4rem);align-items:start}
+@media (max-width:860px){.about{grid-template-columns:1fr}}
+.about .text{display:grid;gap:1rem;max-width:40rem}
+.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:1rem}
+.kpis div{border-top:3px solid var(--accent);padding-top:.6rem;display:grid}
+.kpis b{font-family:var(--f-display);font-size:3.4rem;font-weight:500;line-height:.9;font-variant-numeric:tabular-nums}
+.kpis span{font-size:.92rem;color:var(--ink-2)}
+.cartouche{background:var(--sheet);border:2px solid var(--ink);font-size:.92rem}
+.ct-head{display:flex;justify-content:space-between;gap:1rem;background:var(--ink);color:var(--sheet);padding:.5rem .8rem;font-family:var(--f-data);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase}
+.cartouche dl{display:grid;grid-template-columns:auto minmax(0,1fr);margin:0}
+.cartouche dt,.cartouche dd{margin:0;padding:.6rem .8rem;border-top:1px solid var(--rule)}
+.cartouche dt{font-family:var(--f-data);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);border-right:1px solid var(--rule)}
+.cartouche dd{font-weight:500}
+.cartouche dl > :nth-child(1),.cartouche dl > :nth-child(2){border-top:0}
+
+/* services */
+.svc-wrap{display:grid;grid-template-columns:minmax(0,19rem) minmax(0,1fr);border:1px solid var(--rule);background:var(--sheet)}
+.svc-list{display:grid;align-content:start;border-right:1px solid var(--rule)}
+.svc-tab{display:grid;grid-template-columns:2rem 1fr;gap:.5rem;align-items:baseline;text-align:left;padding:.85rem 1.1rem .55rem;border:0;border-bottom:1px solid var(--rule-2);background:transparent;color:var(--ink);cursor:pointer;position:relative}
+.svc-tab .code{font-family:var(--f-data);font-size:.7rem;color:var(--ink-2)}
+.svc-tab .nm{font-family:var(--f-display);font-size:1.45rem;letter-spacing:.04em;text-transform:uppercase;line-height:1}
+.svc-tab:hover{background:var(--paper)}
+.svc-tab[aria-selected="true"]{background:var(--paper)}
+.svc-tab[aria-selected="true"] .nm{color:var(--accent)}
+.svc-tab[aria-selected="true"]::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent)}
+.svc-panel{padding:clamp(1.25rem,3vw,2.5rem);display:grid;gap:1.25rem;align-content:start;min-width:0}
+.svc-panel h3{font-size:2.6rem}
+.svc-panel .intro{font-size:1.2rem;color:var(--ink-2);line-height:1.5;max-width:40rem}
+.svc-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem}
+.svc-cols h4{margin:0 0 .5rem;font-family:var(--f-data);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);font-weight:500}
+.svc-cols ul{margin:0;padding-left:1.1rem;display:grid;gap:.3rem}
+.svc-cols li::marker{color:var(--accent)}
+.svc-nav{display:flex;gap:.5rem;padding-top:1rem;border-top:1px solid var(--rule-2)}
+@media (max-width:760px){
+  .svc-wrap{grid-template-columns:1fr}
+  .svc-list{display:flex;overflow-x:auto;border-right:0;border-bottom:1px solid var(--rule)}
+  .svc-tab{flex:none;border-bottom:0;border-right:1px solid var(--rule-2);grid-template-columns:1fr;gap:0;padding:.7rem .9rem .4rem}
+  .svc-tab .code{display:none}
+  .svc-tab[aria-selected="true"]::before{top:auto;right:0;width:auto;height:3px}
+  .svc-cols{grid-template-columns:1fr}
+}
+
+/* méthode */
+.chain{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1.25rem;counter-reset:st;list-style:none;padding:0;margin:0}
+@media (max-width:860px){.chain{grid-template-columns:1fr;gap:0}}
+.chain li{padding-top:.9rem;border-top:3px solid var(--rule);display:grid;gap:.3rem;align-content:start}
+.chain li::before{counter-increment:st;content:"0" counter(st);font-family:var(--f-display);font-size:2.2rem;line-height:.9;color:var(--accent)}
+.chain h3{font-size:1.7rem}
+.chain p{font-size:.95rem;color:var(--ink-2)}
+@media (max-width:860px){.chain li{padding-block:.9rem;grid-template-columns:3rem 1fr;column-gap:.5rem}.chain li::before{grid-row:span 2}}
+
+/* simulateur */
+.sim{margin-top:3rem;background:var(--sheet);border:1px solid var(--rule);box-shadow:0 18px 40px -24px rgba(0,0,0,.25)}
+.sim-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.75rem 1rem;padding:1.1rem 1.1rem 1rem;border-bottom:3px solid var(--accent)}
+.sim-head h3{font-size:2rem}
+.sim-head p{font-size:.95rem;color:var(--ink-2);max-width:38rem}
+.sim-sum{display:flex;flex-wrap:wrap;gap:.5rem;padding:.75rem 1.1rem;border-bottom:1px solid var(--rule)}
+.pill{display:inline-flex;align-items:center;gap:.4rem;font-size:.85rem;font-weight:600;padding:.2rem .65rem;border-radius:999px;white-space:nowrap}
+.pill::before{content:"";width:.5rem;height:.5rem;border-radius:50%;background:currentColor}
+.pill.ok{color:var(--ok);background:var(--ok-bg)} .pill.warn{color:var(--warn);background:var(--warn-bg)} .pill.bad{color:var(--bad);background:var(--bad-bg)}
+.tbl-wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:52rem;font-size:.92rem}
+th,td{padding:.55rem .75rem;border-bottom:1px solid var(--rule-2);text-align:left;vertical-align:middle}
+th{font-family:var(--f-data);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);font-weight:500;border-bottom:1px solid var(--rule)}
+.num{text-align:right;font-family:var(--f-data);font-variant-numeric:tabular-nums}
+td.code{font-family:var(--f-data)}
+tr.is-bad td{background:var(--bad-bg)} tr.is-warn td{background:var(--warn-bg)}
+.qin{width:7rem;text-align:right;font-family:var(--f-data);font-size:.9rem;padding:.35rem .5rem;border:1px solid var(--rule);border-radius:4px;background:var(--paper);color:var(--ink)}
+.qin:focus{border-color:var(--accent);outline:none}
+.bar{display:flex;align-items:center;gap:.5rem;justify-content:flex-end}
+.bar i{display:block;width:5.5rem;height:6px;background:var(--rule);position:relative;overflow:hidden;border-radius:3px}
+.bar i b{position:absolute;inset:0 auto 0 0;background:var(--ink);transition:width .3s}
+tr.is-warn .bar i b{background:var(--warn)} tr.is-bad .bar i b{background:var(--bad)}
+.sim-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 1rem;padding:.75rem 1.1rem;font-size:.875rem;color:var(--ink-2)}
+
+/* bandeau d'appel */
+.cta-band{position:relative;overflow:hidden;background:var(--dark);color:var(--dark-fg);text-align:center;padding-block:clamp(3.5rem,8vw,5.5rem)}
+.cta-band svg.art{position:absolute;inset:0;width:100%;height:100%;opacity:.35}
+.cta-band .wrap{position:relative;display:grid;justify-items:center;gap:1rem}
+.cta-band h2{font-size:clamp(2.4rem,5.5vw,4rem);color:#fff}
+.cta-band p{color:var(--dark-mute);max-width:36rem}
+
+/* expérience */
+.filters{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.25rem}
+.chip{display:inline-flex;align-items:center;gap:.45rem;font-size:.92rem;font-weight:500;padding:.35rem .85rem;border-radius:999px;border:1px solid var(--rule);background:var(--sheet);color:var(--ink);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--sheet);border-color:var(--ink)}
+.sw{display:inline-block;width:.65rem;height:.65rem;border-radius:2px}
+.sw.ma{background:var(--c-ma)} .sw.ci{background:var(--c-ci)} .sw.sn{background:var(--c-sn)}
+.gantt-wrap{overflow-x:auto;border:1px solid var(--rule);background:var(--sheet);margin-bottom:2.5rem}
+.gantt{min-width:46rem;padding:.9rem 1rem 1rem;font-size:.88rem}
+.g-axis,.g-row{display:grid;grid-template-columns:12rem minmax(0,1fr);gap:.75rem;align-items:center}
+.g-row{min-height:2.3rem;transition:opacity .2s;border-radius:3px}
+.g-row.dim{opacity:.22}
+.g-row:hover{background:var(--paper)}
+.g-lbl{all:unset;cursor:pointer;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.g-lbl:focus-visible{outline:3px solid var(--accent)}
+.g-track{position:relative;height:1.3rem;background-image:linear-gradient(90deg,var(--rule-2) 1px,transparent 1px);background-repeat:repeat-x}
+.g-bar{position:absolute;top:0;bottom:0;border-radius:3px;cursor:pointer;border:0;padding:0}
+.g-bar.ma{background:var(--c-ma)} .g-bar.ci{background:var(--c-ci)} .g-bar.sn{background:var(--c-sn)}
+.g-bar.now{background-image:repeating-linear-gradient(45deg,transparent 0 6px,rgba(255,255,255,.28) 6px 12px)}
+.g-years{position:relative;height:1.2rem;font-family:var(--f-data);font-size:.68rem;color:var(--ink-2)}
+.g-years span{position:absolute;transform:translateX(-50%)}
+
+.xp{display:grid}
+.job{display:grid;grid-template-columns:12rem minmax(0,1fr);gap:1.5rem;padding-block:1.1rem;border-top:1px solid var(--rule);transition:opacity .2s,background .3s}
+.job:first-child{border-top:3px solid var(--ink);padding-block:1.6rem 2rem}
+.job.dim{opacity:.3}
+.job.flash{background:var(--paper)}
+@media (max-width:720px){.job{grid-template-columns:1fr;gap:.4rem}}
+.when{font-family:var(--f-data);font-size:.85rem;color:var(--ink-2);display:grid;gap:.3rem;align-content:start}
+.when .cty{display:inline-flex;align-items:center;gap:.4rem}
+.job h3{font-size:1.75rem}
+.job:first-child h3{font-size:2.4rem}
+.role{font-weight:500;color:var(--ink-2);margin-top:.2rem}
+.job:first-child .role{color:var(--ink);font-weight:600}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:.5rem 1.5rem;margin-block:1rem;font-size:.95rem}
+.meta div{display:grid;gap:.1rem}
+.job ul{margin:0;padding-left:1.1rem;display:grid;gap:.35rem;max-width:44rem}
+.job ul li::marker{color:var(--accent)}
+.badge{display:inline-block;margin-left:.6rem;font-family:var(--f-data);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;padding:.15rem .5rem;border-radius:999px;background:var(--accent);color:var(--on-accent);vertical-align:middle}
+
+/* compétences */
+.skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem}
+@media (max-width:860px){.skills{grid-template-columns:1fr}}
+.skill-col{display:grid;gap:.9rem;align-content:start;background:var(--sheet);border:1px solid var(--rule);padding:1.4rem}
+.skill-col h3{font-size:1.9rem;padding-bottom:.6rem;border-bottom:3px solid var(--accent);justify-self:start}
+.skill{display:grid;gap:.1rem}
+.skill strong{font-weight:600}
+.skill span{font-size:.95rem;color:var(--ink-2)}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:2rem;justify-content:center}
+.tags span{font-family:var(--f-data);font-size:.78rem;border:1px solid var(--rule);background:var(--sheet);padding:.25rem .65rem;border-radius:999px}
+
+/* contact */
+.contact{background:var(--dark);color:var(--dark-fg)}
+.contact .sec-head p,.contact .label{color:var(--dark-mute)}
+.contact h2,.contact h3{color:#fff}
+.c-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:2rem}
+@media (max-width:860px){.c-layout{grid-template-columns:1fr}}
+.c-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--dark-line);border:1px solid var(--dark-line);align-content:start}
+@media (max-width:520px){.c-grid{grid-template-columns:1fr}}
+.c-item{background:var(--dark);padding:1.1rem;display:grid;gap:.4rem;align-content:start;min-width:0}
+.c-item .val{font-family:var(--f-display);font-size:1.6rem;letter-spacing:.03em;line-height:1.1;overflow-wrap:anywhere;color:#fff;text-decoration:none}
+.c-item a.val{color:var(--accent-2)}
+.c-item a.val:hover{text-decoration:underline}
+.c-item .sub{color:var(--dark-mute);font-size:.92rem}
+.copy{justify-self:start;font-size:.85rem;background:transparent;color:var(--dark-fg);border:1px solid var(--dark-line);border-radius:999px;padding:.25rem .8rem;cursor:pointer}
+.copy:hover{border-color:var(--accent-2);color:var(--accent-2)}
+.c-form{background:var(--dark-2);border:1px solid var(--dark-line);padding:1.4rem;display:grid;gap:.9rem;align-content:start}
+.c-form h3{font-size:2rem}
+.c-form label{display:grid;gap:.3rem;font-size:.9rem;color:var(--dark-mute)}
+.c-form input,.c-form select,.c-form textarea{font:inherit;font-size:1rem;color:var(--dark-fg);background:var(--dark);border:1px solid var(--dark-line);border-radius:4px;padding:.55rem .7rem;width:100%}
+.c-form input:focus,.c-form select:focus,.c-form textarea:focus{border-color:var(--accent-2);outline:none}
+.c-form textarea{min-height:7rem;resize:vertical}
+.c-form .row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.9rem}
+@media (max-width:520px){.c-form .row{grid-template-columns:1fr}}
+.c-form .actions{display:flex;flex-wrap:wrap;gap:.6rem}
+.c-form .hint{font-size:.85rem;color:var(--dark-mute)}
+.c-form .err{color:#f6a39b;font-size:.88rem}
+footer{padding-block:1.5rem;font-size:.875rem;color:var(--dark-mute);border-top:1px solid var(--dark-line)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem}
+footer b{font-family:var(--f-display);font-size:1.3rem;font-weight:500;letter-spacing:.06em;color:#fff}
+footer b span{color:var(--accent-2)}
+
+.to-top{position:fixed;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:8;width:2.9rem;height:2.9rem;border-radius:50%;border:0;background:var(--accent);color:var(--on-accent);cursor:pointer;display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.2)}
+.to-top svg{width:1.2rem;height:1.2rem}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:11;background:var(--ink);color:var(--sheet);padding:.55rem 1.1rem;border-radius:999px;font-size:.92rem;font-weight:500}
+</style>
+
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <button class="icon-btn burger" id="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <a class="brand" href="#accueil"><b>Elaouji<span>.</span></b><small>Métreur vérificateur</small></a>
+    <nav class="nav" id="nav" aria-label="Sections">
+      <a href="#accueil">Accueil</a>
+      <a href="#services">Services</a>
+      <a href="#methode">Méthode</a>
+      <a href="#experience">Références</a>
+      <a href="#competences">Compétences</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="icon-btn theme-btn" id="themeBtn" type="button" aria-label="Changer de thème clair ou sombre" title="Thème clair / sombre">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+    </button>
+  </div>
+  <div class="progress" aria-hidden="true"><i id="prog"></i></div>
+</header>
+
+<main>
+<section class="hero" id="accueil" style="padding:0">
+  <canvas id="plan" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <p class="kicker">Métrés · Attachements · Décomptes</p>
+    <h1>Des quantités <span>justes</span>, des décomptes vérifiés</h1>
+    <p class="lede">Je suis <strong>Nasr-eddine Elaouji</strong>, métreur vérificateur depuis 13 ans au Maroc et en Afrique de l’Ouest. Je mesure, je justifie et je contrôle les quantités de vos chantiers, de l’avant-métré jusqu’à la situation financière.</p>
+    <div class="ctas">
+      <a class="btn primary" href="#contact">Me contacter</a>
+      <a class="btn" href="#methode">Voir la démonstration</a>
+    </div>
+    <p class="status"><span class="dot" aria-hidden="true"></span>En poste au Sénégal · ouvert aux opportunités</p>
+  </div>
+</section>
+
+<div class="tiles" aria-label="Domaines d’intervention">
+  <button class="tile t1" type="button" data-tab="0">
+    <svg class="art" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true" fill="none" stroke="#c9d1d6" stroke-width="1.2">
+      <g opacity=".22"><path d="M0 30h400M0 60h400M0 90h400M0 120h400M0 150h400M0 180h400M0 210h400M0 240h400M0 270h400M40 0v300M80 0v300M120 0v300M160 0v300M200 0v300M240 0v300M280 0v300M320 0v300M360 0v300"/></g>
+      <g opacity=".75"><rect x="70" y="55" width="190" height="120"/><rect x="260" y="55" width="80" height="70"/><path d="M70 115h120v60M190 55v40M300 125v50h-40"/>
+      <path d="M70 40h190M70 35v10M260 35v10M340 35v10M260 40h80" stroke="#f08a3e"/><text x="150" y="33" fill="#f08a3e" stroke="none" font-family="monospace" font-size="11">12,40</text><text x="285" y="33" fill="#f08a3e" stroke="none" font-family="monospace" font-size="11">5,20</text>
+      <path d="M55 55v120M50 55h10M50 175h10" stroke="#f08a3e"/><text x="18" y="120" fill="#f08a3e" stroke="none" font-family="monospace" font-size="11">7,80</text></g>
+    </svg>
+    <h2>Métrés &amp; avant-métrés</h2><span class="pill-more">Voir plus</span>
+  </button>
+  <button class="tile t2" type="button" data-tab="3">
+    <svg class="art" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true" fill="none" stroke="#c9d1d6" stroke-width="1">
+      <g opacity=".3"><path d="M20 40h360M20 70h360M20 100h360M20 130h360M20 160h360M20 190h360M20 220h360M20 250h360M20 40v210M70 40v210M220 40v210M260 40v210M320 40v210M380 40v210"/></g>
+      <g opacity=".8" stroke="none" fill="#c9d1d6"><rect x="80" y="50" width="110" height="8" opacity=".6"/><rect x="80" y="80" width="90" height="8" opacity=".6"/><rect x="80" y="110" width="120" height="8" opacity=".6"/><rect x="80" y="140" width="70" height="8" opacity=".6"/><rect x="80" y="170" width="100" height="8" opacity=".6"/>
+      <rect x="330" y="50" width="40" height="8" fill="#6cc28f"/><rect x="330" y="80" width="30" height="8" fill="#6cc28f"/><rect x="330" y="110" width="45" height="8" fill="#f0b05a"/><rect x="330" y="140" width="20" height="8" fill="#6cc28f"/><rect x="330" y="170" width="48" height="8" fill="#f08a80"/></g>
+    </svg>
+    <h2>Décomptes &amp; situations</h2><span class="pill-more">Voir plus</span>
+  </button>
+  <button class="tile t3" type="button" data-tab="5">
+    <svg class="art" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true" fill="none" stroke="#c9d1d6" stroke-width="1.3">
+      <g opacity=".3"><path d="M0 250h400M0 200h400M0 150h400M0 100h400M0 50h400"/></g>
+      <path d="M20 220 C80 180 120 230 170 170 S260 120 300 150 S360 90 390 70" stroke="#f08a3e" stroke-width="2.5"/>
+      <g opacity=".8"><path d="M30 268h340M30 264v8M115 264v8M200 264v8M285 264v8M370 264v8"/></g>
+      <g font-family="monospace" font-size="10" fill="#c9d1d6" stroke="none" opacity=".9"><text x="18" y="290">PK 0+000</text><text x="100" y="290">0+500</text><text x="186" y="290">1+000</text><text x="270" y="290">1+500</text></g>
+    </svg>
+    <h2>Suivi &amp; tableaux de bord</h2><span class="pill-more">Voir plus</span>
+  </button>
+</div>
+
+<section id="engagements">
+  <div class="wrap">
+    <div class="sec-head center">
+      <p class="kicker">Mes engagements</p>
+      <h2>Un suivi rigoureux, du terrain au décompte</h2>
+    </div>
+    <div class="values">
+      <div class="value">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17 17 3l4 4L7 21H3z"/><path d="m14 6 4 4M6 14l1.5 1.5M9 11l1.5 1.5M12 8l1.5 1.5"/></svg></span>
+        <h3>Précision</h3>
+        <p>Des quantités calculées poste par poste, à partir des plans, des profils et des relevés du terrain.</p>
+      </div>
+      <div class="value">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></span>
+        <h3>Traçabilité</h3>
+        <p>Chaque chiffre renvoie à sa pièce : attachement signé, plan, bon de livraison ou relevé.</p>
+      </div>
+      <div class="value">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0zM19 7l-3 7a3 3 0 0 0 6 0zM8 21h8"/></svg></span>
+        <h3>Transparence</h3>
+        <p>Des accostages contradictoires avec la mission de contrôle pour des décomptes acceptés sans surprise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="profil">
+  <div class="wrap about">
+    <div class="text">
+      <p class="kicker">Qui suis-je</p>
+      <h2 style="font-size:clamp(2.4rem,5vw,3.6rem)">Le lien entre le terrain et le décompte</h2>
+      <p>Mon travail consiste à traduire l’avancement réel d’un chantier en quantités mesurées, justifiées et acceptées par toutes les parties : entreprise, mission de contrôle et maître d’ouvrage.</p>
+      <p>Depuis 2013, j’ai exercé au Maroc, en Côte d’Ivoire et au Sénégal sur des projets très différents : routes et autoroute, ligne à grande vitesse, barrage, bâtiment et lotissement. Titulaire d’un master en gestion de projets et construction, j’allie la rigueur du métré à une vision globale du projet.</p>
+      <div class="kpis">
+        <div><b>13</b><span>ans d’expérience</span></div>
+        <div><b>3</b><span>pays d’intervention</span></div>
+        <div><b>8</b><span>prestations</span></div>
+      </div>
+    </div>
+    <aside class="cartouche" aria-label="Fiche de synthèse">
+      <div class="ct-head"><span>Cartouche</span><span>Fiche profil</span></div>
+      <dl>
+        <dt>Fonction</dt><dd>Métreur vérificateur</dd>
+        <dt>Domaine</dt><dd>Routes, autoroutes, ferroviaire, barrages, bâtiment, VRD</dd>
+        <dt>Chantier actuel</dt><dd>Autoroute Tivaouane–Mékhé, Lot 3.2 (Sénégal)</dd>
+        <dt>Pays</dt><dd>Maroc, Côte d’Ivoire, Sénégal</dd>
+        <dt>Formation</dt><dd>Master en gestion de projets et construction</dd>
+        <dt>Outils</dt><dd>Excel, VBA, AutoCAD, Covadis, SketchUp</dd>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head center">
+      <p class="kicker">Services</p>
+      <h2>Ce que je prends en charge</h2>
+      <p>Sélectionnez une prestation pour voir ce qu’elle comprend et ce que je livre.</p>
+    </div>
+    <div class="svc-wrap">
+      <div class="svc-list" role="tablist" aria-label="Prestations">
+        <button class="svc-tab" role="tab" id="t1" aria-controls="p1" aria-selected="true"><span class="code">01</span><span class="nm">Métrés</span></button>
+        <button class="svc-tab" role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1"><span class="code">02</span><span class="nm">Avant-métrés</span></button>
+        <button class="svc-tab" role="tab" id="t3" aria-controls="p3" aria-selected="false" tabindex="-1"><span class="code">03</span><span class="nm">Attachements</span></button>
+        <button class="svc-tab" role="tab" id="t4" aria-controls="p4" aria-selected="false" tabindex="-1"><span class="code">04</span><span class="nm">Décomptes provisoires</span></button>
+        <button class="svc-tab" role="tab" id="t5" aria-controls="p5" aria-selected="false" tabindex="-1"><span class="code">05</span><span class="nm">Situations financières</span></button>
+        <button class="svc-tab" role="tab" id="t6" aria-controls="p6" aria-selected="false" tabindex="-1"><span class="code">06</span><span class="nm">Suivi des quantités</span></button>
+        <button class="svc-tab" role="tab" id="t7" aria-controls="p7" aria-selected="false" tabindex="-1"><span class="code">07</span><span class="nm">Accostages</span></button>
+        <button class="svc-tab" role="tab" id="t8" aria-controls="p8" aria-selected="false" tabindex="-1"><span class="code">08</span><span class="nm">Révision des prix</span></button>
+      </div>
+      <div>
+        <div class="svc-panel" role="tabpanel" id="p1" aria-labelledby="t1">
+          <h3>Métrés</h3>
+          <p class="intro">Calcul des quantités réellement exécutées, poste par poste, à partir des plans, des profils en travers et des relevés topographiques.</p>
+          <div class="svc-cols">
+            <div><h4>Livrables</h4><ul><li>Notes de calcul par poste du bordereau</li><li>Croquis cotés et extraits de plans</li><li>Récapitulatif par section et par PK</li></ul></div>
+            <div><h4>Pièces de référence</h4><ul><li>Plans d’exécution</li><li>Profils en long et en travers</li><li>Bordereau des prix unitaires</li></ul></div>
+          </div>
+        </div>
+        <div class="svc-panel" role="tabpanel" id="p2" aria-labelledby="t2" hidden>
+          <h3>Avant-métrés</h3>
+          <p class="intro">Quantités prévisionnelles par ouvrage et par poste, pour une étude de prix, un budget ou le contrôle d’un détail estimatif.</p>
+          <div class="svc-cols">
+            <div><h4>Livrables</h4><ul><li>Avant-métré détaillé par ouvrage</li><li>Comparaison avec le détail estimatif</li><li>Hypothèses de calcul documentées</li></ul></div>
+            <div><h4>Pièces de référence</h4><ul><li>Plans de projet</li><li>CCTP</li><li>Devis quantitatif et estimatif</li></ul></div>
+          </div>
+        </div>
+        <div class="svc-panel" role="tabpanel" id="p3" aria-labelledby="t3" hidden>
+          <h3>Attachements</h3>
+          <p class="intro">Constat contradictoire des travaux réalisés, établi avec la mission de contrôle et prêt à être signé par les parties.</p>
+          <div class="svc-cols">
+            <div><h4>Livrables</h4><ul><li>Feuilles d’attachement par poste</li><li>Croquis cotés des ouvrages</li><li>Registre des attachements à jour</li></ul></div>
+            <div><h4>Pièces de référence</h4><ul><li>CCAP</li><li>Ordres de service</li><li>Rapports journaliers de chantier</li></ul></div>
+          </div>
+        </div>
+        <div class="svc-panel" role="tabpanel" id="p4" aria-labelledby="t4" hidden>
+          <h3>Décomptes provisoires</h3>
+          <p class="intro">Établissement mensuel des décomptes : travaux du mois, cumul depuis l’origine, avances, retenues et approvisionnements.</p>
+          <div class="svc-cols">
+            <div><h4>Livrables</h4><ul><li>Décompte mensuel par poste</li><li>État des avances et des retenues</li><li>Récapitulatif par chapitre du bordereau</li></ul></div>
+            <div><h4>Pièces de référence</h4><ul><li>Attachements validés</li><li>Bordereau des prix unitaires</li><li>CCAP</li></ul></div>
+          </div>
+        </div>
+        <div class="svc-panel" role="tabpanel" id="p5" aria-labelledby="t5" hidden>
+          <h3>Situations financières</h3>
+          <p class="intro">Suivi de la consommation du marché, écarts par rapport au détail estimatif et projection du montant final.</p>
+          <div class="svc-cols">
+            <div><h4>Livrables</h4><ul><li>Situation du marché par poste</li><li>Tableau des écarts et de leurs causes</li><li>Projection en fin de travaux</li></ul></div>
+            <div><h4>Pièces de référence</h4><ul><li>Détail estimatif du marché</li><li>Décomptes provisoires</li><li>Avenants et ordres de service</li></ul></div>
+          </div>
+        </div>
+        <div class="svc-panel" role="tabpanel" id="p6" aria-labelledby="t6" hidden>
+          <h3>Suivi des quantités</h3>
+          <p class="intro">Suivi journalier des quantités par section et par PK, avec des alertes dès qu’un poste approche de la quantité du marché.</p>
+          <div class="svc-cols">
+            <div><h4>Livrables</h4><ul><li>Suivi journalier par poste et par PK</li><li>Tableau de bord d’avancement</li><li>Liste des postes à surveiller</li></ul></div>
+            <div><h4>Pièces de référence</h4><ul><li>Rapports journaliers</li><li>Bons de livraison et de pesée</li><li>Relevés topographiques</li></ul></div>
+          </div>
+        </div>
+        <div class="svc-panel" role="tabpanel" id="p7" aria-labelledby="t7" hidden>
+          <h3>Accostages</h3>
+          <p class="intro">Rapprochement, ligne par ligne, des quantités de l’entreprise et de la mission de contrôle avant validation du décompte.</p>
+          <div class="svc-cols">
+            <div><h4>Livrables</h4><ul><li>Tableau de rapprochement par poste</li><li>Liste des écarts et de leurs justifications</li><li>Procès-verbal d’accostage</li></ul></div>
+            <div><h4>Pièces de référence</h4><ul><li>Métrés de l’entreprise</li><li>Métrés de la mission de contrôle</li><li>Attachements signés</li></ul></div>
+          </div>
+        </div>
+        <div class="svc-panel" role="tabpanel" id="p8" aria-labelledby="t8" hidden>
+          <h3>Révision des prix</h3>
+          <p class="intro">Calcul des coefficients de révision selon les formules du marché et les index officiels publiés.</p>
+          <div class="svc-cols">
+            <div><h4>Livrables</h4><ul><li>Tableau des index par mois</li><li>Calcul des coefficients par formule</li><li>Application aux décomptes</li></ul></div>
+            <div><h4>Pièces de référence</h4><ul><li>CCAP (formules de révision)</li><li>Index officiels publiés</li><li>Décomptes provisoires</li></ul></div>
+          </div>
+        </div>
+        <div class="svc-panel" style="padding-top:0">
+          <div class="svc-nav">
+            <button class="btn-sm" type="button" id="svcPrev">← Précédent</button>
+            <button class="btn-sm" type="button" id="svcNext">Suivant →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="methode">
+  <div class="wrap">
+    <div class="sec-head center">
+      <p class="kicker">Méthode</p>
+      <h2>Du relevé terrain au paiement</h2>
+      <p>Chaque étape alimente la suivante dans les mêmes classeurs, pour qu’un chiffre se retrouve de l’attachement jusqu’au décompte.</p>
+    </div>
+    <ol class="chain">
+      <li><h3>Relevé</h3><p>Données topographiques, bons de livraison, rapports journaliers.</p></li>
+      <li><h3>Métré</h3><p>Calcul des quantités par poste et par tronçon.</p></li>
+      <li><h3>Attachement</h3><p>Constat contradictoire signé avec la mission de contrôle.</p></li>
+      <li><h3>Accostage</h3><p>Rapprochement des écarts entre les parties.</p></li>
+      <li><h3>Décompte</h3><p>Décompte provisoire et mise à jour de la situation financière.</p></li>
+    </ol>
+
+    <div class="sim" id="sim">
+      <div class="sim-head">
+        <div>
+          <p class="label">Démonstration interactive · données fictives</p>
+          <h3>Suivi des quantités du mois</h3>
+          <p>Modifiez la quantité du mois : le cumul, l’avancement et les alertes se recalculent comme dans mes tableaux de bord.</p>
+        </div>
+        <button class="btn-sm" type="button" id="simReset">Réinitialiser</button>
+      </div>
+      <div class="sim-sum" id="simSum" aria-live="polite"></div>
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr><th>N° prix</th><th>Désignation</th><th>U</th><th class="num">Qté marché</th><th class="num">Cumul antérieur</th><th class="num">Qté du mois</th><th class="num">Cumul</th><th class="num">Avancement</th><th>État</th></tr>
+          </thead>
+          <tbody id="simBody"></tbody>
+        </table>
+      </div>
+      <div class="sim-foot">
+        <span>Seuils : à surveiller dès 90 % de la quantité du marché, dépassement au-delà de 100 %.</span>
+        <span>Chiffres inventés pour la démonstration.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <svg class="art" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true" fill="none" stroke="#5b666e" stroke-width="1">
+    <path d="M0 230 C150 200 260 250 400 210 S650 150 800 180 S1050 120 1200 140"/>
+    <path d="M0 250 C150 220 260 270 400 230 S650 170 800 200 S1050 140 1200 160" stroke-dasharray="6 6"/>
+    <path d="M0 280h1200M0 276v8M100 276v8M200 276v8M300 276v8M400 276v8M500 276v8M600 276v8M700 276v8M800 276v8M900 276v8M1000 276v8M1100 276v8"/>
+  </svg>
+  <div class="wrap">
+    <p class="kicker">Vous avez un chantier à suivre ?</p>
+    <h2>Des décomptes justes, livrés à temps</h2>
+    <p>Poste, mission de métré ou vérification de décomptes : décrivez votre besoin, je vous réponds rapidement.</p>
+    <a class="btn primary" href="#contact">Me contacter</a>
+  </div>
+</div>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head center">
+      <p class="kicker">Références</p>
+      <h2>13 ans de chantiers</h2>
+      <p>Filtrez par pays ou cliquez sur une barre du planning pour aller au chantier correspondant.</p>
+    </div>
+    <div class="filters" role="group" aria-label="Filtrer par pays">
+      <button class="chip" type="button" data-f="all" aria-pressed="true">Tous</button>
+      <button class="chip" type="button" data-f="ma" aria-pressed="false"><span class="sw ma"></span>Maroc</button>
+      <button class="chip" type="button" data-f="ci" aria-pressed="false"><span class="sw ci"></span>Côte d’Ivoire</button>
+      <button class="chip" type="button" data-f="sn" aria-pressed="false"><span class="sw sn"></span>Sénégal</button>
+    </div>
+    <div class="gantt-wrap"><div class="gantt" id="gantt" aria-label="Planning des chantiers"></div></div>
+
+    <div class="xp">
+      <article class="job" id="j-sn" data-c="sn" data-s="2023-10" data-e="now" data-short="Tivaouane–Mékhé">
+        <div class="when"><span>Oct. 2023 – aujourd’hui</span><span class="cty"><span class="sw sn"></span>Sénégal</span></div>
+        <div>
+          <h3>Autoroute Tivaouane–Mékhé, Lot 3.2<span class="badge">En cours</span></h3>
+          <p class="role">Métreur vérificateur</p>
+          <div class="meta">
+            <div><span class="label">Maître d’ouvrage</span><span>AGEROUTE Sénégal</span></div>
+            <div><span class="label">Entreprise titulaire</span><span>AREZKI SA</span></div>
+            <div><span class="label">Mission de contrôle</span><span>Groupement GIC / Africa Eng / BEST Conseil / BTE</span></div>
+            <div><span class="label">Financement</span><span>BIDC / État du Sénégal</span></div>
+          </div>
+          <ul>
+            <li>Établissement des décomptes provisoires mensuels.</li>
+            <li>Suivi journalier des quantités exécutées par poste du bordereau.</li>
+            <li>Avant-métrés, attachements contradictoires et accostages avec la mission de contrôle.</li>
+            <li>Tenue de la situation financière du marché et des écarts par rapport au détail estimatif.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="job" id="j-mdez" data-c="ma" data-s="2021-01" data-e="2021-11" data-short="Barrage de M’Dez">
+        <div class="when"><span>Janv. 2021 – Nov. 2021</span><span class="cty"><span class="sw ma"></span>Maroc</span></div>
+        <div><h3>Barrage de M’Dez, région de Sefrou</h3><p class="role">Métreur vérificateur · SINTRAM</p></div>
+      </article>
+      <article class="job" id="j-bouna" data-c="ci" data-s="2015-07" data-e="2020-09" data-short="Route Bouna–Doropo">
+        <div class="when"><span>Juil. 2015 – Sept. 2020</span><span class="cty"><span class="sw ci"></span>Côte d’Ivoire</span></div>
+        <div><h3>Route Bouna–Doropo–Frontière Burkina Faso</h3><p class="role">Métreur vérificateur · SINTRAM</p></div>
+      </article>
+      <article class="job" id="j-lgv" data-c="ma" data-s="2015-01" data-e="2015-07" data-short="LGV Tanger–Kénitra">
+        <div class="when"><span>Janv. 2015 – Juil. 2015</span><span class="cty"><span class="sw ma"></span>Maroc</span></div>
+        <div><h3>Ligne à grande vitesse Tanger–Kénitra, TOARC 0</h3><p class="role">Métreur vérificateur · SONASR</p></div>
+      </article>
+      <article class="job" id="j-lycee" data-c="ma" data-s="2014-05" data-e="2014-12" data-short="Lycée à Tanger">
+        <div class="when"><span>Mai 2014 – Déc. 2014</span><span class="cty"><span class="sw ma"></span>Maroc</span></div>
+        <div><h3>Construction d’un lycée à Tanger</h3><p class="role">Métreur vérificateur · SOGUIGOT</p></div>
+      </article>
+      <article class="job" id="j-onapar" data-c="ma" data-s="2013-01" data-e="2014-04" data-short="Lotissement ONAPAR">
+        <div class="when"><span>Janv. 2013 – Avr. 2014</span><span class="cty"><span class="sw ma"></span>Maroc</span></div>
+        <div><h3>Lotissement ONAPAR, Casablanca</h3><p class="role">Métreur vérificateur · MRIMEE</p></div>
+      </article>
+      <article class="job" data-c="none">
+        <div class="when"><span>Formation</span></div>
+        <div><h3>Master en gestion de projets et construction</h3></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="competences">
+  <div class="wrap">
+    <div class="sec-head center">
+      <p class="kicker">Compétences &amp; outils</p>
+      <h2>Ce que je maîtrise</h2>
+    </div>
+    <div class="skills">
+      <div class="skill-col">
+        <h3>Excel avancé</h3>
+        <div class="skill"><strong>Classeurs de décompte liés</strong><span>Suivi journalier, attachements, décomptes et situation reliés entre eux.</span></div>
+        <div class="skill"><strong>Formules et recherches</strong><span>RECHERCHEX, INDEX/EQUIV, SOMME.SI.ENS, tableaux structurés.</span></div>
+        <div class="skill"><strong>Tableaux croisés et contrôles</strong><span>Synthèses par poste, par section et par mois, contrôles de cohérence.</span></div>
+        <div class="skill"><strong>VBA et Power Query</strong><span>Automatisation des saisies, import et nettoyage des données de chantier.</span></div>
+      </div>
+      <div class="skill-col">
+        <h3>Dessin &amp; métré</h3>
+        <div class="skill"><strong>AutoCAD</strong><span>Lecture des plans, mesure de surfaces et de longueurs, croquis d’attachement.</span></div>
+        <div class="skill"><strong>Covadis et SketchUp</strong><span>Projets routiers et cubatures sous Covadis, modélisation 3D sous SketchUp.</span></div>
+        <div class="skill"><strong>Profils en travers</strong><span>Calcul de cubatures de terrassement et de chaussée.</span></div>
+        <div class="skill"><strong>Pièces du marché</strong><span>Bordereau des prix, détail estimatif, CCAP, CCTP.</span></div>
+      </div>
+      <div class="skill-col">
+        <h3>Pilotage</h3>
+        <div class="skill"><strong>Tableaux de bord automatisés</strong><span>Avancement physique et financier mis à jour à chaque saisie.</span></div>
+        <div class="skill"><strong>Alertes de dépassement</strong><span>Mise en évidence des postes qui approchent ou dépassent la quantité du marché.</span></div>
+        <div class="skill"><strong>Révision des prix</strong><span>Feuilles de calcul des coefficients à partir des index.</span></div>
+        <div class="skill"><strong>Gestion de projet</strong><span>Master en gestion de projets et construction ; suivi des coûts, des délais et des quantités.</span></div>
+      </div>
+    </div>
+    <div class="tags" aria-label="Mots-clés">
+      <span>Métré</span><span>Avant-métré</span><span>Attachement</span><span>Décompte provisoire</span><span>Situation financière</span><span>Accostage</span><span>Révision des prix</span><span>Bordereau des prix</span><span>Détail estimatif</span><span>Cubatures</span><span>Excel</span><span>VBA</span><span>Power Query</span><span>AutoCAD</span><span>Covadis</span><span>SketchUp</span><span>Gestion de projet</span>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker">Contact</p>
+      <h2>Parlons de votre chantier</h2>
+      <p>Pour un poste, une mission de métré ou une vérification de décomptes.</p>
+    </div>
+    <div class="c-layout">
+      <div class="c-grid">
+        <div class="c-item">
+          <span class="label">E-mail</span>
+          <a class="val" id="v-mail" href="mailto:nasrddine.elaouji@gmail.com">nasrddine.elaouji@gmail.com</a>
+          <button class="copy" type="button" data-copy="v-mail">Copier</button>
+        </div>
+        <div class="c-item">
+          <span class="label">LinkedIn</span>
+          <a class="val" href="https://www.linkedin.com/in/elaouji-nasr-eddine-a1a9b299" target="_blank" rel="noopener">Voir mon profil ↗</a>
+          <span class="sub">Maroc · Afrique de l’Ouest</span>
+        </div>
+        <div class="c-item">
+          <span class="label">Téléphone · Sénégal</span>
+          <span class="val" id="v-tel-sn">+221 78 147 16 67</span>
+          <button class="copy" type="button" data-copy="v-tel-sn">Copier</button>
+        </div>
+        <div class="c-item">
+          <span class="label">Téléphone · Maroc</span>
+          <span class="val" id="v-tel-ma">+212 6 36 07 60 82</span>
+          <button class="copy" type="button" data-copy="v-tel-ma">Copier</button>
+        </div>
+      </div>
+      <form class="c-form" id="cForm" novalidate>
+        <h3>Préparer un message</h3>
+        <div class="row">
+          <label for="f-nom">Votre nom<input id="f-nom" name="nom" autocomplete="name"></label>
+          <label for="f-org">Société<input id="f-org" name="org" autocomplete="organization"></label>
+        </div>
+        <label for="f-objet">Objet
+          <select id="f-objet" name="objet">
+            <option>Proposition de poste</option>
+            <option>Mission de métré</option>
+            <option>Vérification de décomptes</option>
+            <option>Autre demande</option>
+          </select>
+        </label>
+        <label for="f-msg">Message<textarea id="f-msg" name="msg" placeholder="Décrivez le projet, le lieu et les délais."></textarea></label>
+        <p class="err" id="fErr" hidden>Écrivez un message avant de continuer.</p>
+        <div class="actions">
+          <button class="btn primary" type="submit">Ouvrir ma messagerie</button>
+          <button class="btn light" type="button" id="fCopy">Copier le message</button>
+        </div>
+        <p class="hint">Le message s’ouvre dans votre logiciel de messagerie, adressé à nasrddine.elaouji@gmail.com. S’il ne s’ouvre pas, copiez-le et collez-le dans un e-mail.</p>
+      </form>
+    </div>
+  </div>
+  <footer>
+    <div class="wrap">
+      <b>Elaouji<span>.</span></b>
+      <span>© <span id="yr">2026</span> Nasr-eddine Elaouji · Métreur vérificateur · Master en gestion de projets et construction</span>
+    </div>
+  </footer>
+</section>
+</main>
+
+<button class="to-top" id="toTop" type="button" aria-label="Revenir en haut" hidden>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+(function(){
+  var $=function(s,r){return (r||document).querySelector(s)}, $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+  var fmt=function(n){return Number(n).toLocaleString('fr-FR',{maximumFractionDigits:2})};
+  var toastT; function toast(m){var t=$('#toast');t.textContent=m;t.hidden=false;clearTimeout(toastT);toastT=setTimeout(function(){t.hidden=true},2200)}
+  var root=document.documentElement;
+
+  /* thème */
+  try{var th=localStorage.getItem('theme'); if(th==='dark'||th==='light') root.setAttribute('data-theme',th);}catch(e){}
+  $('#themeBtn').addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+    var next=cur==='dark'?'light':'dark'; root.setAttribute('data-theme',next);
+    try{localStorage.setItem('theme',next)}catch(e){} drawPlan();
+  });
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change',function(){drawPlan()});
+
+  /* menu mobile */
+  var nav=$('#nav'), burger=$('#burger');
+  burger.addEventListener('click',function(){var o=!nav.classList.contains('open');nav.classList.toggle('open',o);burger.setAttribute('aria-expanded',o);burger.setAttribute('aria-label',o?'Fermer le menu':'Ouvrir le menu')});
+  $$('a',nav).forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');burger.setAttribute('aria-expanded','false')})});
+
+  /* plan crayonné du hero : profil en travers coté */
+  var cv=$('#plan');
+  function drawPlan(){
+    var r=cv.getBoundingClientRect(), dpr=Math.min(2,window.devicePixelRatio||1); if(!r.width) return;
+    cv.width=r.width*dpr; cv.height=r.height*dpr; var c=cv.getContext('2d'); c.setTransform(dpr,0,0,dpr,0,0); c.clearRect(0,0,r.width,r.height);
+    var cs=getComputedStyle(root), pen=cs.getPropertyValue('--pencil').trim()||'#9aa1a6', acc=cs.getPropertyValue('--accent').trim()||'#d9661c';
+    var W=r.width,H=r.height, x0=Math.max(W*.42,W-760), w=Math.min(720,W-x0-20), base=H*.62;
+    if(w<260) { x0=W*.08; w=W*.84; base=H*.86; }
+    var s=w/720; c.lineCap='round'; c.lineJoin='round';
+    function L(pts,col,lw,dash){c.beginPath();c.strokeStyle=col;c.lineWidth=lw;c.setLineDash(dash||[]);pts.forEach(function(p,i){var X=x0+p[0]*s,Y=base+p[1]*s;i?c.lineTo(X,Y):c.moveTo(X,Y)});c.stroke();}
+    function T(t,x,y,col){c.fillStyle=col;c.font=(11*Math.max(.8,s))+'px "JetBrains Mono",monospace';c.setLineDash([]);c.fillText(t,x0+x*s,base+y*s)}
+    /* terrain naturel */
+    L([[0,40],[60,30],[120,46],[180,28],[240,36],[300,22],[360,30],[420,18],[480,34],[540,26],[600,40],[660,30],[720,44]],pen,1.2,[5,4]);
+    /* plateforme et talus */
+    L([[40,60],[150,-20],[570,-20],[680,60]],pen,1.6);
+    /* couches de chaussée */
+    L([[175,-20],[205,-44],[515,-44],[545,-20]],pen,1.4);
+    L([[205,-44],[225,-58],[495,-58],[515,-44]],pen,1.4);
+    L([[225,-58],[495,-58]],acc,2.2);
+    /* axe */
+    L([[360,-150],[360,80]],pen,1,[12,4,2,4]);
+    /* cotes */
+    L([[225,-100],[495,-100]],acc,1); L([[225,-108],[225,-92]],acc,1); L([[495,-108],[495,-92]],acc,1);
+    T('7,00',345,-106,acc); T('BB 0/14 ép. 5 cm',508,-64,pen); T('Couche de base',528,-38,pen); T('Couche de fondation',555,-12,pen);
+    T('Pente 2,5 %',250,-70,pen); T('PK 12+450',372,-140,acc); T('Talus 3/2',70,10,pen); T('TN',690,50,pen);
+    /* hachures de remblai */
+    c.save();c.beginPath();c.moveTo(x0+40*s,base+60*s);c.lineTo(x0+150*s,base-20*s);c.lineTo(x0+570*s,base-20*s);c.lineTo(x0+680*s,base+60*s);c.closePath();c.clip();
+    for(var i=-200;i<900;i+=14){L([[i,70],[i+90,-30]],pen,.5)} c.restore();
+  }
+  drawPlan(); var rz; addEventListener('resize',function(){clearTimeout(rz);rz=setTimeout(drawPlan,120)});
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(drawPlan);
+
+  /* progression, retour haut, menu actif */
+  var prog=$('#prog'), toTop=$('#toTop');
+  function onScroll(){var h=root.scrollHeight-innerHeight;prog.style.width=(h>0?Math.min(100,scrollY/h*100):0)+'%';toTop.hidden=scrollY<700;}
+  addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  toTop.addEventListener('click',function(){scrollTo({top:0,behavior:'smooth'})});
+  var links=$$('.nav a');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var id=e.target.id; if(id==='engagements'||id==='profil') id='accueil'; links.forEach(function(a){a.setAttribute('aria-current',a.getAttribute('href')==='#'+id?'true':'false')})}})},{rootMargin:'-45% 0px -50% 0px'});
+    $$('main section[id]').forEach(function(s){io.observe(s)});
+  }
+
+  /* services */
+  var tabs=$$('.svc-tab'), cur=0;
+  function sel(i,focus){cur=(i+tabs.length)%tabs.length;
+    tabs.forEach(function(t,k){var on=k===cur;t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1;$('#'+t.getAttribute('aria-controls')).hidden=!on;});
+    if(focus) tabs[cur].focus(); var l=tabs[cur].parentNode; l.scrollLeft=tabs[cur].offsetLeft-l.offsetLeft-20;}
+  tabs.forEach(function(t,k){t.addEventListener('click',function(){sel(k)});
+    t.addEventListener('keydown',function(e){if(e.key==='ArrowDown'||e.key==='ArrowRight'){e.preventDefault();sel(cur+1,true)}if(e.key==='ArrowUp'||e.key==='ArrowLeft'){e.preventDefault();sel(cur-1,true)}})});
+  $('#svcPrev').addEventListener('click',function(){sel(cur-1)});
+  $('#svcNext').addEventListener('click',function(){sel(cur+1)});
+  $$('.tile').forEach(function(t){t.addEventListener('click',function(){sel(+t.dataset.tab);$('#services').scrollIntoView({behavior:'smooth'})})});
+
+  /* simulateur */
+  var rows=[
+    {n:'200',d:'Déblais mis en dépôt',u:'m³',m:120000,a:90000,q:6400},
+    {n:'310',d:'Couche de fondation en graveleux latéritique',u:'m³',m:45000,a:28000,q:3050},
+    {n:'330',d:'Couche de base en grave concassée',u:'m³',m:28000,a:12000,q:2280},
+    {n:'410',d:'Béton bitumineux 0/14, ép. 5 cm',u:'t',m:18500,a:3000,q:1625},
+    {n:'520',d:'Bordures de trottoir T2',u:'ml',m:6200,a:5300,q:420},
+    {n:'620',d:'Buses métalliques Ø 1000',u:'ml',m:850,a:780,q:121}
+  ];
+  var tb=$('#simBody');
+  tb.innerHTML=rows.map(function(r){return '<tr data-n="'+r.n+'"><td class="code">'+r.n+'</td><td>'+r.d+'</td><td>'+r.u+'</td><td class="num">'+fmt(r.m)+'</td><td class="num">'+fmt(r.a)+'</td>'+
+    '<td class="num"><input class="qin" type="number" min="0" step="any" inputmode="decimal" id="q-'+r.n+'" aria-label="Quantité du mois, prix '+r.n+'" value="'+r.q+'"></td>'+
+    '<td class="num c-cum"></td><td class="num"><span class="bar"><span class="c-pct"></span><i><b></b></i></span></td><td class="c-st"></td></tr>'}).join('');
+  function calc(){var nb=0,nw=0,no=0;
+    rows.forEach(function(r){var tr=tb.querySelector('tr[data-n="'+r.n+'"]');var v=parseFloat(tr.querySelector('input').value);if(isNaN(v)||v<0)v=0;
+      var cum=r.a+v,p=cum/r.m*100,st=p>100?'bad':(p>=90?'warn':'ok');
+      tr.querySelector('.c-cum').textContent=fmt(cum);tr.querySelector('.c-pct').textContent=fmt(Math.round(p))+' %';
+      tr.querySelector('b').style.width=Math.min(100,p)+'%';tr.className=st==='bad'?'is-bad':(st==='warn'?'is-warn':'');
+      tr.querySelector('.c-st').innerHTML='<span class="pill '+st+'">'+(st==='bad'?'Dépassement':st==='warn'?'À surveiller':'Conforme')+'</span>';
+      if(st==='bad')nb++;else if(st==='warn')nw++;else no++;});
+    $('#simSum').innerHTML='<span class="pill bad">'+nb+' en dépassement</span><span class="pill warn">'+nw+' à surveiller</span><span class="pill ok">'+no+' conforme'+(no>1?'s':'')+'</span>';}
+  tb.addEventListener('input',calc); calc();
+  $('#simReset').addEventListener('click',function(){rows.forEach(function(r){$('#q-'+r.n).value=r.q});calc();toast('Démonstration réinitialisée')});
+
+  /* planning */
+  var Y0=2013, now=new Date(), Y1=Math.max(now.getFullYear()+1,2027), span=(Y1-Y0)*12;
+  var toM=function(s){var p=s.split('-');return (parseInt(p[0],10)-Y0)*12+parseInt(p[1],10)-1};
+  var nowM=(now.getFullYear()-Y0)*12+now.getMonth()+1;
+  var html='<div class="g-axis"><span></span><div class="g-years">';
+  for(var y=Y0;y<=Y1;y++){if((y-Y0)%2===0||y===Y1) html+='<span style="left:'+((y-Y0)*12/span*100)+'%">'+y+'</span>';}
+  html+='</div></div>';
+  $$('.job[data-s]').reverse().forEach(function(j){var s=toM(j.dataset.s),e=j.dataset.e==='now'?nowM:toM(j.dataset.e)+1,w=j.querySelector('.when span').textContent;
+    html+='<div class="g-row" data-c="'+j.dataset.c+'"><button class="g-lbl" type="button" data-t="'+j.id+'">'+j.dataset.short+'</button><div class="g-track" style="background-size:calc(100% / '+(Y1-Y0)+') 100%"><button type="button" class="g-bar '+j.dataset.c+(j.dataset.e==='now'?' now':'')+'" data-t="'+j.id+'" style="left:'+(s/span*100)+'%;width:'+Math.max(.8,(e-s)/span*100)+'%" aria-label="'+j.dataset.short+', '+w+'" title="'+w+'"></button></div></div>';});
+  var g=$('#gantt'); g.innerHTML=html;
+  g.addEventListener('click',function(ev){var b=ev.target.closest('[data-t]');if(!b)return;var j=document.getElementById(b.dataset.t);
+    j.scrollIntoView({behavior:'smooth',block:'center'});j.classList.add('flash');setTimeout(function(){j.classList.remove('flash')},1400);});
+  $$('.chip').forEach(function(c){c.addEventListener('click',function(){var f=c.dataset.f;
+    $$('.chip').forEach(function(x){x.setAttribute('aria-pressed',x===c)});
+    $$('.g-row').forEach(function(r){r.classList.toggle('dim',f!=='all'&&r.dataset.c!==f)});
+    $$('.job').forEach(function(j){j.classList.toggle('dim',f!=='all'&&j.dataset.c!==f)});});});
+
+  /* copier */
+  function copyText(t,el,btn){
+    function fb(){if(el){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);}toast('Texte sélectionné : copiez-le avec Ctrl+C');}
+    try{navigator.clipboard.writeText(t).then(function(){toast('Copié dans le presse-papiers');if(btn){btn.textContent='Copié';setTimeout(function(){btn.textContent='Copier'},1800)}},fb);}catch(e){fb()}}
+  $$('.copy').forEach(function(b){b.addEventListener('click',function(){var el=document.getElementById(b.dataset.copy);copyText(el.textContent.trim(),el,b)})});
+
+  /* formulaire */
+  var MAIL='nasrddine.elaouji@gmail.com';
+  function compose(){var nom=$('#f-nom').value.trim(),org=$('#f-org').value.trim(),obj=$('#f-objet').value,msg=$('#f-msg').value.trim(),sig=[nom,org].filter(Boolean).join(' · ');
+    return {subject:obj+(org?' · '+org:''),body:'Bonjour M. Elaouji,\n\n'+msg+(sig?'\n\n'+sig:''),ok:!!msg};}
+  $('#cForm').addEventListener('submit',function(e){e.preventDefault();var c=compose();$('#fErr').hidden=c.ok;if(!c.ok){$('#f-msg').focus();return;}
+    var a=document.createElement('a');a.href='mailto:'+MAIL+'?subject='+encodeURIComponent(c.subject)+'&body='+encodeURIComponent(c.body);document.body.appendChild(a);a.click();a.remove();toast('Ouverture de votre messagerie…');});
+  $('#fCopy').addEventListener('click',function(){var c=compose();$('#fErr').hidden=c.ok;if(!c.ok){$('#f-msg').focus();return;}copyText('À : '+MAIL+'\nObjet : '+c.subject+'\n\n'+c.body,$('#f-msg'),null);});
+
+  $('#yr').textContent=new Date().getFullYear();
+})();
+</script>
+
+</body>
+</html>
